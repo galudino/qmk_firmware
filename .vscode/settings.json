@@ -21,5 +21,6 @@
     "[markdown]": {
         "editor.trimAutoWhitespace": false,
         "files.trimTrailingWhitespace": false
-    }
+    },
+    "editor.minimap.maxColumn": 480
 }
