@@ -3,7 +3,7 @@
  *  @brief      Header file for qmk firmware (firmware directives)
  *
  *  @author     Gemuele Aludino
- *  @date       23 May 2020
+ *  @date       08 Jun 2020
  *  @copyright  Copyright © 2020 Gemuele Aludino
  */
 /**
@@ -32,16 +32,23 @@
 
 #include "config_common.h"
 
-/* Use vendor ID 0x05ac (Apple Inc.) for macOS-related functions */
+/*<< Use this directive to enable macOS-related functionality */
+#define ASSUME_APPLE
 
 /*<< USB Device descriptor parameter */
 #define VENDOR_ID       0xFEED
-/*#define VENDOR_ID		0x05ac*/
 #define PRODUCT_ID      0x6060
-#define DEVICE_VER      0x0001
+#define DEVICE_VER      0x0100
 #define MANUFACTURER    galudino
 #define PRODUCT         gcskb_TKL86
 #define DESCRIPTION     USB Handwired ANSI TKL keyboard
+
+#ifdef ASSUME_APPLE
+# undef VENDOR_ID
+# undef PRODUCT_ID
+# define VENDOR_ID      0x05ac
+# define PRODUCT_ID     0x024f
+#endif /* ASSUME_APPLE */
 
 /*<< key matrix size - 23 total pins used, 86/102 elements used */
 #define MATRIX_ROWS 6
