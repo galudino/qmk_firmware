@@ -30,26 +30,21 @@
 #include "gcskb.h"
 #include "config.h"
 
+enum keymap_layout {
+    KM_MACOS = 0,
+    KM_WIN,
+    KM_FUNC,
+    KM_SETTINGS
+};
+
 /**
  *	TODO: doc
  */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    MAIN_LAYER_QWERTY_MAC,
-    ALTERNATE_LAYER_QWERTY_WIN,
-    _EMPTY_LAYER,
-    _EMPTY_LAYER,
-    _EMPTY_LAYER,
-    _EMPTY_LAYER,
-    _EMPTY_LAYER,
-    _EMPTY_LAYER,
-    _EMPTY_LAYER,
-    _EMPTY_LAYER,
-    _EMPTY_LAYER,
-    _EMPTY_LAYER,
-    _EMPTY_LAYER,
-    _EMPTY_LAYER,
-    _EMPTY_LAYER,
-    _EMPTY_LAYER
+    [KM_MACOS] = MAIN_LAYER_QWERTY_MAC,
+    [KM_WIN] = ALTERNATE_LAYER_QWERTY_WIN,
+    [KM_FUNC] = FUNCTION_LAYER,
+    [KM_SETTINGS] = SETTINGS_LAYER
 };
 
 /**
