@@ -29,11 +29,15 @@
  */
 #include QMK_KEYBOARD_H
 
+/**
+ *  @enum   keymap_layout   Members are used by TG(layer) macro (to toggle a layer on or off)
+ *                          to switch between different layers
+ */
 enum keymap_layout {
-    KM_MACOS = 0,     // matches MF68 layout
-    KM_WIN,
-    KM_FUNC,          // 0x08
-    KM_SETTINGS,      // 0x10
+    KM_MACOS = 0,     // matches MF68 layout, macOS-centric layout
+    KM_WIN,           // Windows-centric layout
+    KM_FUNC,          // 0x08, function keymap, activated by holding Fn key
+    KM_SETTINGS,      // 0x10, keymap to configure keyboard hardware/firmware settings
 };
 
 // Colors of the layer indicator LED
@@ -108,8 +112,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |-------------------------------------------------------------|       ,----.
    * |Shift   |   |Del|   |   |   |   |Mute|V- |V+ |  |TG(SETTINGS)|       | Up |
    * |-------------------------------------------------------------'   ,-------------.
-   * |Func|Win |Alt |        PgD           |Alt |Ctrl |Func |          |Lft| Dn |Rig |
-   * `------------------------------------------------------'          `-------------'
+   * |Func|Win |Alt |        PgD                  | Alt |Ctrl| Func|   |Lft| Dn |Rig |
+   * `-------------------------------------------------------------'   `-------------'
    */
   [KM_FUNC] = LAYOUT_tkl_ansi(
     KC_ESC,           _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,           KC_PSCR, KC_SLCK, KC_PAUS, \
@@ -163,7 +167,7 @@ void matrix_init_user(void) {
 }
 
 void matrix_scan_user(void) {
-    
+
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {

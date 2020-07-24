@@ -186,25 +186,25 @@ enum keymap_layout {
    *  but exposes additional settings for keyboard hardware/firmware.
    *
    *  While in the Settings layer, you have the following options available:
-   *  - Enter DFU mode (for flashing firmware with QMK Toolbox) by hitting Esc
+   *  - Enter DFU mode (for flashing firmware with QMK Toolbox) by hitting Enter
    *    The only way to exit DFU mode is to
    *        - Use the 'Exit DFU' option on QMK Toolbox
    *        - Unplug and replug the keyboard (you will return to LAYER_QWERTY_MAC)
    *
    *  So, while in the macOS layer or Windows layer,
    *  to enter DFU mode:
-   *  - Press and hold Fn, then hit RShift. Finally, hit Esc.
+   *  - Press and hold Fn, then hit RShift. Finally, hit Enter.
    *
    *  For all other keys not mentioned above, they are 'KC_TRNS' (transparent),
    *  which means they retain the keycode from the previous layer.
    */
 #define LAYER_SETTINGS\
 	KEYMAP_GCSKB_ANSI_7U(\
-		RESET, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,\
+		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,\
 		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,\
 		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,\
-		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, TG(KM_WIN),\
-		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, TG(KM_SETTINGS), KC_TRNS,\
+		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, RESET,\
+		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,\
 		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS)\
 
 /**
