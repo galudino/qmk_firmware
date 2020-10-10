@@ -1,24 +1,24 @@
 /*!
     \file       gcskb.h
     \brief      Header file for qmk firmware (keymappings)
-    
+
     \author     Gemuele Aludino
     \date       23 May 2020
     \copyright  Copyright © 2020 Gemuele Aludino
 
 
     Copyright © 2020 Gemuele Aludino
-    
+
     Permission is hereby granted, free of charge, to any person obtaining
     a copy of this software and associated documentation files (the "Software"),
     to deal in the Software without restriction, including without limitation
     the rights to use, copy, modify, merge, publish, distribute, sublicense,
     and/or sell copies of the Software, and to permit persons to whom the
     Software is furnished to do so, subject to the following conditions:
-    
+
     The above copyright notice and this permission notice shall be included
     in all copies or substantial portions of the Software.
-    
+
     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
@@ -46,10 +46,10 @@ enum keymap_layout {
 
   /*!
       Default keymap for gcskb_TKL86
-    
+
       86 key TKL (tenkeyless) layout
       ANSI, with 7u spacebar and 1.5-1.0-1.5 bottom row modifiers
-    
+
      ,--------------------------------------------------------------------------.
      |000|   |002|003|004|005| |006|007|008|009| |010|011|012|013|  |014|015|016|
      |-----------------------------------------------------------|  |-----------|
@@ -63,7 +63,7 @@ enum keymap_layout {
      |-----------------------------------------------------------|  ,-----------.
      | 500 |501| 502 |            506          | 510 |511|  513  |  |514|515|516|
      `-----------------------------------------------------------'  `-----------'
-    
+
      All layers created for this keyboard will be based off of this keymap.
    */
 #define KEYMAP_GCSKB_ANSI_7U( \
@@ -85,16 +85,16 @@ enum keymap_layout {
   /*!
       Default layer for gcskb_TKL86
       macOS-centric
-    
+
       Press and hold the Fn key to enter LAYER_FUNCTION,
       where you may switch to the following layers:
         - LAYER_QWERTY_WIN, the alternate layer (Windows-centric)
         - LAYER_SETTINGS, where keyboard hardware/firmware is configured
           (can be used to enter DFU mode, see LAYER_SETTINGS for more)
-    
+
       To switch to LAYER_QWERTY_WIN, press and hold Fn, then hit Return.
       To switch to LAYER_SETTINGS, press and hold Fn, then it RShift.
-    
+
      ,--------------------------------------------------------------------------.
      |Esc|   |F1 |F2 |F3 |F4 | |F5 |F6 |F7 |F8 | |F9 |F10|F11|F12|  |PSc|SLk|Pse|
      |-----------------------------------------------------------|  |-----------|
@@ -121,16 +121,16 @@ enum keymap_layout {
   /*!
       Alternate layer for gcskb_TKL86
       Windows-centric
-    
+
       Press and hold the Fn key to enter LAYER_FUNCTION,
       where you may switch to the following layers:
         - LAYER_QWERTY_MAC, the main layer (macOS-centric)
         - LAYER_SETTINGS, where keyboard hardware/firmware is configured
           (can be used to enter DFU mode, see LAYER_SETTINGS for more)
-    
+
       To switch to LAYER_QWERTY_MAC, press and hold Fn, then hit Return.
       To switch to LAYER_SETTINGS, press and hold Fn, then it RShift.
-    
+
      ,--------------------------------------------------------------------------.
      |Esc|   |F1 |F2 |F3 |F4 | |F5 |F6 |F7 |F8 | |F9 |F10|F11|F12|  |PSc|SLk|Pse|
      |-----------------------------------------------------------|  |-----------|
@@ -156,17 +156,17 @@ enum keymap_layout {
 
   /*!
       Function layer for gcskb_TKL86
-   
+
       Enter the Function layer by pressing and holding the Fn key,
       while in the macOS layer or Windows layer.
-   
+
       While holding the Fn key, you may enter the following layers by doing the following:
       - 'Return' to toggle between the macOS layer and Windows layer
       - 'RShift' to switch to the Settings layer.
-   
+
       For all other keys not mentioned above, they are 'KC_TRNS' (transparent),
       which means they retain the keycode from the previous layer.
-   
+
      ,--------------------------------------------------------------------------.
      |Esc|   |F1 |F2 |F3 |F4 | |F5 |F6 |F7 |F8 | |F9 |F10|F11|F12|  |PSc|SLk|Pse|
      |-----------------------------------------------------------|  |-----------|
@@ -180,11 +180,11 @@ enum keymap_layout {
      |-----------------------------------------------------------|  ,-----------.
      |CpsLk|Fn |LCmd |            PgD            |RCmd |Fn |RCtrl|  |Lft|Dwn|Rgt|
      `-----------------------------------------------------------'  `-----------'
-    
+
       While in the macOS layer or Windows layer, pressing and holding the Fn key
       (on the right side of the keyboard for those layers)
       will activate this keymap.
-    
+
       If, while holding down the right Fn key
       (i.e. momentary activation of the Function layer), you press the left Fn key
       (which is the LAlt key on macOS or LWin key on Windows) --
@@ -201,23 +201,23 @@ enum keymap_layout {
 
   /*!
       Settings layer for gcskb_TKL86
-    
+
       Enter the Settings layer by pressing and holding the Fn key (thereby entering the Function layer)
       while in the macOS layer or Windows layer -- then hit the RShift key.
-    
+
       This layer is virtually identical to the Function layer,
       but exposes additional settings for keyboard hardware/firmware.
-    
+
       While in the Settings layer, you have the following options available:
       - Enter DFU mode (for flashing firmware with QMK Toolbox) by hitting Enter
         The only way to exit DFU mode is to
             - Use the 'Exit DFU' option on QMK Toolbox
             - Unplug and replug the keyboard (you will return to LAYER_QWERTY_MAC)
-    
+
       So, while in the macOS layer or Windows layer,
       to enter DFU mode:
       - Press and hold Fn, then hit RShift. Finally, hit Enter.
-    
+
       For all other keys not mentioned above, they are 'KC_TRNS' (transparent),
       which means they retain the keycode from the previous layer.
    */
@@ -227,11 +227,11 @@ enum keymap_layout {
 		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS,\
 		KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS,\
 		KC_TRNS,         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,      RESET,\
-		KC_TRNS,             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,           KC_TRNS,               KC_TRNS,\
+		KC_TRNS,             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,           TG(KM_SETTINGS),               KC_TRNS,\
 		KC_TRNS, KC_TRNS, KC_TRNS,                         KC_TRNS,                                            KC_TRNS, KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS, KC_TRNS)\
 /*!
     Transparent layer for gcskb_TKL86fg
-  
+
     Use this layer as a template for new layers that you may want to create.
  */
 #define _LAYER_TRANSPARENT\
