@@ -53,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      |-----------------------------------------------------------|        ,----.
      |Shift   |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|Shift     |        | Up |
      |-----------------------------------------------------------|   ,-------------.
-     |Ctrl |Alt | GUI |         Space           | GUI |Alt | Ctrl|   |Lft | Dn |Rig|
+     |Ctrl|Alt |GUI |         Space           |GUI|Alt |Fn  |Ctrl    |Lft | Dn |Rig|
      `-----------------------------------------------------------'   `-------------'
   */
   [KM_MACOS] = LAYOUT_tkl_ansi(
@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC,  KC_BSLS,      KC_DEL,  KC_END,  KC_PGDN, \
     LT(KM_FUNC, KC_ESC), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,           KC_ENT,                                  \
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,                    KC_RSFT,               KC_UP,            \
-    KC_LCTL, KC_LALT, KC_LGUI,                            KC_SPC,                             KC_NO,   KC_RGUI, KC_RALT,  KC_RCTL,      KC_LEFT, KC_DOWN, KC_RGHT  \
+    KC_LCTL, KC_LALT, KC_LGUI,                            KC_SPC,                             KC_RGUI,KC_RALT,MO(KM_FUNC),KC_RCTL,      KC_LEFT, KC_DOWN, KC_RGHT  \
     ),
 
   /*! Keymap KM_WIN: (Secondary Layer) Windows-centric Layer
@@ -77,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      |-----------------------------------------------------------|        ,----.
      |Shift   |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|Shift     |        | Up |
      |-----------------------------------------------------------|   ,-------------.
-     |Ctrl |GUI  |Alt  |        Space           | Alt |GUI | Ctrl|   |Lft | Dn |Rig|
+     |Ctrl|GUI |Alt |         Space           |Alt|GUI |Fn  |Ctrl    |Lft | Dn |Rig|
      `-----------------------------------------------------------'   `-------------'
   */
   [KM_WIN] = LAYOUT_tkl_ansi(
@@ -86,12 +86,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC,  KC_BSLS,      KC_DEL,  KC_END,  KC_PGDN, \
     LT(KM_FUNC, KC_ESC), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,           KC_ENT,                                  \
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,                    KC_RSFT,               KC_UP,            \
-    KC_LCTL, KC_LGUI, KC_LALT,                            KC_SPC,                             KC_NO,     KC_RALT,KC_RGUI, KC_RCTL,      KC_LEFT, KC_DOWN, KC_RGHT  \
+    KC_LCTL, KC_LGUI, KC_LALT,                            KC_SPC,                             KC_RALT,KC_RGUI,MO(KM_FUNC),KC_RCTL,      KC_LEFT, KC_DOWN, KC_RGHT  \
     ),
 
   /*! Keymap KM_FUNC: Function Layer
      ,-------------------------------------------------------------.  ,--------------.
-     |Esc  |f1| f2| f3| f4|  | f5| f6| f7| f8|   | f9|f10|f11|f12  |  |Prnt|ScLk|Paus|
+     |Esc  |  |   |   |   |  |   |   |   |   |   |   |   |   |     |  |    |    |    |
      |-------------------------------------------------------------|  |--------------|
      | ` |F1 |F2 |F3 |F4 |F5 |F6 |F7 |F8 |F9 |F10|F11|F12|Delete   |  | Ins|    |    |
      |-------------------------------------------------------------|  |--------------|
@@ -101,7 +101,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      |-------------------------------------------------------------|       ,----.
      |Shift   |   |Del|   |   |   |   |Mute|V- |V+ |  |TG(SETTINGS)|       | Up |
      |-------------------------------------------------------------'   ,-------------.
-     |Ctrl|G/A |Alt |        PgD                  | Alt |G/A | Ctrl|   |Lft| Dn |Rig |
+     |    |    |    |         PgD               |   |    |    |    |   |Lft | Dn |Rig|
      `-------------------------------------------------------------'   `-------------'
   */
   [KM_FUNC] = LAYOUT_tkl_ansi(
@@ -123,7 +123,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      |------------------------------------------------------------|  `-------------'
      |AudTgl |Hz+|MS+|   |   |   |   |   |   |   |   |   |  RST   |
      |------------------------------------------------------------|       ,----.
-     |ClickTgl|Hz-|MS-|   |   |   |   |   |   |   |   |TG(SETTING)|       |Hue+|
+     |ClickTgl|Hz-|MS-|   |   |   |   |   |   |   |  |TG(SETTINGS)|       |Hue+|
      |------------------------------------------------------------   ,--------------.
      |    |    |    |                            |    |     |     |  |Sat-|Hue-|Sat+|
      `------------------------------------------------------------'  `--------------'
