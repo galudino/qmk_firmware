@@ -155,5 +155,36 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 void led_set_user(uint8_t usb_led) {
+    /*
+        Overriding default LED settings.
 
+        The LEDs have been wired away from the Unloved Bastard
+        so that they can work with a Filco-style aluminum case.
+
+        The right-most LED on the controller has been removed,
+        and is no longer in use.
+        (this was formerly used for USB_LED_NUM_LOCK)
+        (Filco-style cases only have two LEDs.)
+    */
+
+    /*
+        We will keep normal caps lock operation for now --
+        but in the future, I might completely remove caps lock from all layouts.
+        This will free up this LED for another use case.
+
+        This is the left-most LED on a Filco-style case.
+    */
+    if (usb_led && (1 << USB_LED_CAPS_LOCK)) {
+        PORTC = PORTC & ~(1 << 5);
+    } else {
+        PORTC = PORTC | (1 << 5);
+    }
+
+    /*
+        This LED will remain on at all times (middle LED on Unloved Bastard)
+        to indicate the keyboard is operational.
+
+        This is the right-most LED on a Filco-style case.
+    */
+    PORTC = PORTC & ~(1 << 6);
 }
