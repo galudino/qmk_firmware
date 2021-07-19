@@ -99,7 +99,7 @@
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    LFKeyboards
 #define PRODUCT         LFK87
-#define DESCRIPTION     QMK keyboard firmware for LFK87
+//#define DESCRIPTION     QMK keyboard firmware for LFK87
 
 #ifdef ASSUME_APPLE
 # undef VENDOR_ID
