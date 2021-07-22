@@ -1,1 +1,1 @@
-# The default keymap for unloved_bastard
+# galudino's keymap for unloved_bastard
