@@ -3,11 +3,11 @@
     \brief      Source file for lfk87 layout (keymappings)
 
     \author     Gemuele Aludino
-    \date       20 Jul 2020
-    \copyright  Copyright © 2020 Gemuele Aludino
+    \date       01 Nov 2021
+    \copyright  Copyright © 2021 Gemuele Aludino
 
 
-    Copyright © 2020 Gemuele Aludino
+    Copyright © 2021 Gemuele Aludino
 
     Permission is hereby granted, free of charge, to any person obtaining
     a copy of this software and associated documentation files (the "Software"),
@@ -36,7 +36,6 @@
  */
 enum keymap_layout {
     KM_MACOS = 0,     //<! macOS-centric layout
-    KM_WIN,           //<! Windows-centric layout
     KM_FUNC,          //<! 0x08, function keymap, activated by holding Fn key
     KM_SETTINGS,      //<! 0x10, keymap to configure keyboard hardware/firmware settings
 };
@@ -82,79 +81,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,        KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS,     KC_DEL,  KC_END,  KC_PGDN,  \
     LT(KM_FUNC, KC_ESC), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT,  KC_ENT,                                 \
     KC_LSFT,                KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH,  KC_RSFT,               KC_UP,            \
-    KC_LCTL, KC_LALT, KC_LGUI,                 KC_SPC,                 KC_NO, KC_RGUI, KC_RALT,  KC_RCTL,     KC_LEFT, KC_DOWN, KC_RGHT   \
+    KC_LCTL, KC_LALT, KC_LGUI,                 KC_SPC,                 XXXXXXX, KC_RGUI, KC_RALT,  KC_RCTL,    KC_LEFT, KC_DOWN, KC_RGHT  \
     ),
 
-  /*! Keymap KM_WIN: (Secondary Layer) Windows-centric Layer
-     ,-----------------------------------------------------------------------------.
-     |     |  |   |   |   |  |   |   |   |   |   |   |   |   |   |  |    |    |    |
-     |-----------------------------------------------------------|  |--------------|
-     |   |   |   |   |   |   |   |   |   |   |   |   |   |       |  | Ins|    |    |
-     |-----------------------------------------------------------|  |--------------|
-     |     |   |   |   |   |   |   |   |   |   |   |   |   |     |  |    |    |    |
-     |-----------------------------------------------------------|  `--------------'
-     |     |   |   |   |   |   |   |   |   |   |   |   |         |
-     |-----------------------------------------------------------|        ,----.
-     |        |   |   |   |   |   |   |   |   |   |   |          |        |    |
-     |-----------------------------------------------------------|   ,-------------.
-     |     |GUI  |Alt  |                        | Alt | GUI |    |   |    |   |    |
-     `-----------------------------------------------------------'   `-------------'
-  */
-  [KM_WIN] = LAYOUT_tkl_ansi(
-    _______,    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,                _______, _______, _______, \
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,    _______,       KC_INS,  _______, _______, \
-    _______,    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,       _______, _______, _______, \
-    _______,       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,       _______,                                  \
-    _______,         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,                             _______,          \
-    _______, KC_LGUI, KC_LALT,                            _______,                               _______, KC_RALT, KC_RGUI, _______,       _______, _______, _______  \
-    ),
-
-  /*! Keymap KM_FUNC: Function Layer
-     ,-----------------------------------------------------------------------------.
-     |   |F13|F14|F15|F16|   |F17|F18|F19|F20|   |F21|F22|F23|F24|  |    |    |    |
-     |-----------------------------------------------------------|  |--------------|
-     |Esc|F1 |F2 |F3 |F4 |F5 |F6 |F7 |F8 |F9 |F10|F11|F12|       |  |    |    |    |
-     |-----------------------------------------------------------|  |--------------|
-     |     |   |Up |   |   |   |   |Ins|Hme|PUp|PSc|SLk|Pse|     |  |    |    |    |
-     |-----------------------------------------------------------|  `--------------'
-     |     |Lft|Dwn|Rgt|Afn|   |Lft|Up |Dwn|Rgt|   |   |         |
-     |-----------------------------------------------------------|        ,----.
-     |        |   |   |   |   |   |Del|End|PgD|   |   |          |        |    |
-     |-----------------------------------------------------------|   ,-------------.
-     |     |App  |MO(Settings)|                 |     |     |    |   |    |   |    |
-     `-----------------------------------------------------------'   `-------------'
-  */
   [KM_FUNC] = LAYOUT_tkl_ansi(
     _______,    KC_F13, KC_F14, KC_F15, KC_F16, KC_F17, KC_F18, KC_F19, KC_F20, KC_F21, KC_F22, KC_F23, KC_F24,                         _______, _______, _______,   \
-    KC_ESC, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12,     _______,                         _______,  _______, _______,   \
-    _______,    _______, KC_UP, _______, _______, _______, _______, KC_INS, KC_HOME, KC_PGUP, _______, _______, _______,  _______,      _______,  _______,  _______, \
+    KC_ESC, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12,     _______,                         KC_INS,  _______, _______,   \
+    _______,    _______, KC_UP, _______, _______, _______, _______, KC_INS, KC_HOME, KC_PGUP, KC_PSCR, KC_SLCK, KC_PAUS,  _______,      _______,  _______,  _______, \
     _______,        KC_LEFT, KC_DOWN, KC_RIGHT, KC_APFN, _______, KC_LEFT, KC_UP, KC_DOWN, KC_RIGHT, _______, _______,    _______,                                   \
     _______,            _______, _______, _______, _______, _______, KC_DEL, KC_END, KC_PGDN, _______,  _______, _______,                        _______,            \
-    _______, KC_APP, MO(KM_SETTINGS),                            _______,                      _______, _______, _______, _______,      _______, _______, _______    \
+    KC_CAPS, _______, _______,                            MO(KM_SETTINGS),                      _______, _______, KC_APP, _______,      _______, _______, _______    \
     ),
 
-    /*! Keymap KM_SETTINGS: Settings Layer
-     ,-----------------------------------------------------------------------------.
-     |     |  |   |   |   |  |   |   |   |   |   |   |   |   |   |  |    |    |    |
-     |-----------------------------------------------------------|  |--------------|
-     |   |Mte|VlD|VlU|Prv|Ply|Nxt|Stp|BrD|BrU|   |MPc|Wke|PwrOff |  |    |    |    |
-     |-----------------------------------------------------------|  |--------------|
-     |     |   |StU|   |   |   |   |   |BrU|   |   |   |   |     |  |    |    |    |
-     |-----------------------------------------------------------|  `--------------'
-     |     |HeD|StD|HeU|   |   |   |EfD|BrD|EfU|   |   |TG(Win)  |
-     |-----------------------------------------------------------|        ,----.
-     |    |   |   |   |   |   |NKROTgl|   |RGBL|RGBR|RGBTgl|     |        |    |
-     |-----------------------------------------------------------|   ,-------------.
-     |RESET|GuiOff|    |                   |     |GuiOn|    |    |   |    |   |    |
-     `-----------------------------------------------------------'   `-------------'
-  */
   [KM_SETTINGS] = LAYOUT_tkl_ansi(
     XXXXXXX,           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, \
-    XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU, KC_MPRV, KC_MPLY, KC_MNXT, KC_MSTP, KC_BRID, KC_BRIU, XXXXXXX, KC_MYCM,  KC_WAKE,  KC_PWR,      XXXXXXX, XXXXXXX, XXXXXXX, \
-    XXXXXXX,  XXXXXXX, RGB_SAI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_VAI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, \
-    XXXXXXX,  RGB_HUD,  RGB_SAD,  RGB_HUI, XXXXXXX, XXXXXXX, XXXXXXX, RGB_SPD, RGB_VAD, RGB_SPI, XXXXXXX, XXXXXXX,   TG(KM_WIN),                                   \
-    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, NK_TOGG, XXXXXXX, RGB_RMOD, RGB_MOD, RGB_TOG,                XXXXXXX,               XXXXXXX,          \
-    RESET, GUI_OFF, XXXXXXX,                            XXXXXXX,                               XXXXXXX, XXXXXXX, GUI_ON, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX  \
+    GE_SWAP, KC_MUTE, KC_VOLD, KC_VOLU, KC_MPRV, KC_MPLY, KC_MNXT, KC_MSTP, KC_BRID, KC_BRIU, XXXXXXX, KC_MYCM,  KC_WAKE,  KC_PWR,      XXXXXXX, XXXXXXX, XXXXXXX, \
+    GE_NORM,  XXXXXXX, RGB_SAI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_VAI, XXXXXXX, XXXXXXX, XXXXXXX, BS_NORM, BS_SWAP,      XXXXXXX, XXXXXXX, XXXXXXX, \
+    XXXXXXX,  RGB_HUD,  RGB_SAD,  RGB_HUI, XXXXXXX, XXXXXXX, XXXXXXX, RGB_SPD, RGB_VAD, RGB_SPI, XXXXXXX, XXXXXXX,          DEBUG,                                 \
+    XXXXXXX,  RGB_M_P,  RGB_M_B,  RGB_M_R, RGB_M_SW, XXXXXXX, NK_TOGG, XXXXXXX, RGB_RMOD, RGB_MOD, RGB_TOG,               EEP_RST,               XXXXXXX,          \
+    RESET, GUI_OFF, AG_NORM,                            XXXXXXX,                               XXXXXXX, AG_SWAP, GUI_ON,  XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX  \
   ),
 };
 
