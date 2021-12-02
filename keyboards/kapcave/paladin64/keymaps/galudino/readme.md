@@ -1,1 +1,1 @@
-The default keymap for Paladin64
+# Paladin64 - `galudino` keymap
