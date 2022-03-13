@@ -23,13 +23,13 @@
     Created by combining LAYOUT_60_ANSI and LAYOUT_60_tsangan_hhkb
  */
 #define LAYOUT_60_ansi_wkl( \
-  K00, K01, K02, K03, K04, K05, K06, K07, K08, K09, K0A, K0B, K0C,      K0E, \
+  K00, K01, K02, K03, K04, K05, K06, K07, K08, K09, K0A, K0B, K0C, K0D, \
   K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K1A, K1B, K1C,      K1E, \
   K20, K21, K22, K23, K24, K25, K26, K27, K28, K29, K2A, K2B,           K2E, \
   K30,      K32, K33, K34, K35, K36, K37, K38, K39, K3A, K3B, K3C,      K3E,\
   K40, K41,  K42,              K46,                      K4B, K4C,      K4E \
 ) { \
-  {  K00,  K01,  K02,  K03,  K04,    K05,    K06,    K07,    K08,    K09,  K0A,  K0B,  K0C,  KNO,  K0E}, \
+  {  K00,  K01,  K02,  K03,  K04,    K05,    K06,    K07,    K08,    K09,  K0A,  K0B,  K0C,  K0D,  KNO}, \
   {  K10,  K11,  K12,  K13,  K14,    K15,    K16,    K17,    K18,    K19,  K1A,  K1B,  K1C,  KNO,  K1E   }, \
   {  K20,  K21,  K22,  K23,  K24,    K25,    K26,    K27,    K28,    K29,  K2A,  K2B,  KNO,  KNO,  K2E  }, \
   {  K30,  KNO,  K32,  K33,  K34,    K35,    K36,    K37,    K38,    K39,  K3A,  K3B,  K3C,  KNO,  K3E  }, \
@@ -52,16 +52,16 @@ enum keymap_layout {
  * ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────┬───┤
  * │ Shift  │ Z │ X │ C │ V │ B │ N │ M │ , │ . │ / │ Shift│FN │
  * ├─────┬──┴┬──┴──┬┴───┴───┴───┴───┴───┴───┴──┬┴───┴┬───┬─┴───┤
- * │Ctrl │   │ GUI │                           │ GUI │   │ Alt │
+ * │Ctrl │Alt│ GUI │                           │ GUI │Alt│Ctrl │
  * └─────┴───┴─────┴───────────────────────────┴─────┴───┴─────┘
  */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [KM_MACOS] = LAYOUT_60_ansi_wkl(
-    KC_GRV, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,                 KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,   KC_BSPC,
+    KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,                 KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,   KC_BSPC,
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,   KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC,  KC_BSLS,
     LT(KM_FUNC, KC_ESC), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,                 KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,           KC_ENT,
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,                 KC_M,    KC_COMM, KC_DOT,  KC_SLSH,          KC_RSFT, LT(KM_FUNC, KC_DEL),
-    KC_LCTL, KC_LALT, KC_LGUI,                            KC_SPC,                                                               KC_RGUI, KC_RALT, KC_RALT
+    KC_LCTL, KC_LALT, KC_LGUI,                            KC_SPC,                                                               KC_RGUI, KC_RALT, KC_RCTL
   ),
 
   [KM_FUNC] = LAYOUT_60_ansi_wkl(
